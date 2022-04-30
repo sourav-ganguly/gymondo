@@ -16,6 +16,8 @@
 		E52A876F281D627A00794C44 /* Gymondo_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A876E281D627A00794C44 /* Gymondo_TestTests.swift */; };
 		E52A8779281D627A00794C44 /* Gymondo_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A8778281D627A00794C44 /* Gymondo_TestUITests.swift */; };
 		E52A877B281D627A00794C44 /* Gymondo_TestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A877A281D627A00794C44 /* Gymondo_TestUITestsLaunchTests.swift */; };
+		E52A878A281D678D00794C44 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A8789281D678D00794C44 /* Networking.swift */; };
+		E52A878C281D69F400794C44 /* ExerciseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A878B281D69F400794C44 /* ExerciseRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		E52A8774281D627A00794C44 /* Gymondo TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gymondo TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52A8778281D627A00794C44 /* Gymondo_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gymondo_TestUITests.swift; sourceTree = "<group>"; };
 		E52A877A281D627A00794C44 /* Gymondo_TestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gymondo_TestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E52A8789281D678D00794C44 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		E52A878B281D69F400794C44 /* ExerciseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		E52A8756281D627800794C44 /* Gymondo Test */ = {
 			isa = PBXGroup;
 			children = (
+				E52A8788281D62BB00794C44 /* Presentation */,
+				E52A8787281D62B100794C44 /* Data */,
 				E52A8757281D627800794C44 /* AppDelegate.swift */,
 				E52A8759281D627800794C44 /* SceneDelegate.swift */,
 				E52A875B281D627800794C44 /* ViewController.swift */,
@@ -125,6 +131,22 @@
 				E52A877A281D627A00794C44 /* Gymondo_TestUITestsLaunchTests.swift */,
 			);
 			path = "Gymondo TestUITests";
+			sourceTree = "<group>";
+		};
+		E52A8787281D62B100794C44 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E52A8789281D678D00794C44 /* Networking.swift */,
+				E52A878B281D69F400794C44 /* ExerciseRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E52A8788281D62BB00794C44 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +283,8 @@
 				E52A875C281D627800794C44 /* ViewController.swift in Sources */,
 				E52A8758281D627800794C44 /* AppDelegate.swift in Sources */,
 				E52A875A281D627800794C44 /* SceneDelegate.swift in Sources */,
+				E52A878A281D678D00794C44 /* Networking.swift in Sources */,
+				E52A878C281D69F400794C44 /* ExerciseRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
