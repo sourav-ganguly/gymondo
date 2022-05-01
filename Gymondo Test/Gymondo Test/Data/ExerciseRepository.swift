@@ -8,12 +8,12 @@
 import Foundation
 
 protocol ExerciseRepository {
-    func getExercises(completion: @escaping (Result<Int,Error>) -> Void)
+    func getExercises(completion: @escaping (Result<ExerciseList,Error>) -> Void)
 }
 
 class ExerciseRepositoryImpl: ExerciseRepository {
     let networking = Netwrking()
-    func getExercises(completion: @escaping (Result<Int, Error>) -> Void) {
-        return networking.fetchData(urlString: "https://my-json-server.typicode.com/thefabulous/fabtest-server/db", completion: completion)
+    func getExercises(completion: @escaping (Result<ExerciseList, Error>) -> Void) {
+        return networking.fetchData(urlString: "https://wger.de/api/v2/exercise/", completion: completion)
     }
 }
