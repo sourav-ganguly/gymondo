@@ -37,6 +37,7 @@ extension AppCoordinator: Coordinator {
         guard let vc = storyboard.instantiateViewController(withIdentifier: .exerciseListViewController) as? ExerciseListViewController else {
             preconditionFailure("Unable to instantiate a ExercideListViewController with the name")
         }
+        vc.viewModel = ExercideListViewModelImpl(coordinator: self)
         navigationController.setViewControllers([vc], animated: false)
     }
 }

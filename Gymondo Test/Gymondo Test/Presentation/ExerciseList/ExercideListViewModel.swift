@@ -6,3 +6,48 @@
 //
 
 import Foundation
+import Combine
+
+protocol ExercideListViewModel {
+    var exerciseListPublisher: Published<[ExerciseCellViewModel]>.Publisher  { get }
+    func didSelectCell(index: Int)
+    func viewDidLoad()
+}
+
+
+class ExercideListViewModelImpl: ExercideListViewModel {
+    let exerciseRepository: ExerciseRepository = ExerciseRepositoryImpl()
+    weak var coordinator: AppCoordinator!
+
+    @Published var exerciseList: [ExerciseCellViewModel] = []
+    var exerciseListPublisher: Published<[ExerciseCellViewModel]>.Publisher  { $exerciseList }
+    
+    func didSelectCell(index: Int) {
+        
+    }
+    
+    func viewDidLoad() {
+        exerciseRepository.getExercises { [weak self] result in
+            switch result {
+            case .success(let exercisesList):
+                self?.exerciseList = exercisesList.results
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    init(coordinator: AppCoordinator) {
+        self.coordinator = coordinator
+    }
+}
+
+extension Exercise: ExerciseCellViewModel {
+    var title: String {
+        name
+    }
+    
+    var subtitle: String {
+        resultDescription
+    }
+}

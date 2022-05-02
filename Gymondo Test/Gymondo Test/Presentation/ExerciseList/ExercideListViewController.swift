@@ -6,37 +6,58 @@
 //
 
 import UIKit
+import Combine
 
 class ExerciseListViewController: UIViewController {
+    
+    var viewModel: ExercideListViewModel!
+    var exerciseViewModelList: [ExerciseCellViewModel] = []
+    private var cancellables: Set<AnyCancellable> = []
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = .title
         configureTableView()
-        print("ExerciseListViewController view did load")
+        viewModel.viewDidLoad()
+
+        viewModel.exerciseListPublisher
+            .receive(on: RunLoop.main)
+            .sink { [weak self] viewModelList in
+                self?.exerciseViewModelList = viewModelList
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
     }
     
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         tableView.showsVerticalScrollIndicator = false
-        tableView.register(UINib(nibName: .exerciseCellName, bundle: nil), forCellReuseIdentifier: .exerciseCellName)
+        tableView.register(UINib(nibName: .exerciseCellName, bundle: nil),
+                           forCellReuseIdentifier: .exerciseCellName)
     }
 
 }
 
 extension ExerciseListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return exerciseViewModelList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: .exerciseCellName) as! ExerciseTableViewCell
+        cell.configureWith(viewModel: exerciseViewModelList[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectCell(index: indexPath.row)
     }
 }
 
 private extension String {
     static let exerciseCellName = "ExerciseTableViewCell"
+    static let title = "Exercise List"
 }
