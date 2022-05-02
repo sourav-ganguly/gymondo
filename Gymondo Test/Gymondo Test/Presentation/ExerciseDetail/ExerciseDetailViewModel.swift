@@ -11,26 +11,28 @@ import Combine
 protocol ExerciseDetailViewModel {
     
     var exerciseInfoPublisher: Published<ExerciseInfo?>.Publisher  { get }
-    func didSelectCell(index: Int)
+    func didSelectVariation(index: Int)
     func viewDidLoad()
 }
 
 
 class ExerciseDetailViewModelImpl: ExerciseDetailViewModel {
     
-    
     let exerciseRepository: ExerciseRepository = ExerciseRepositoryImpl()
     weak var coordinator: AppCoordinator!
+    let exerciseId: Int
 
     @Published var exerciseInfo: ExerciseInfo? = nil
     var exerciseInfoPublisher: Published<ExerciseInfo?>.Publisher  { $exerciseInfo }
     
-    func didSelectCell(index: Int) {
-        
+    func didSelectVariation(index: Int) {
+        if let exerciseId = exerciseInfo?.variations[index] {
+            coordinator.navigateToExerciseDetail(id: exerciseId)
+        }
     }
     
     func viewDidLoad() {
-        exerciseRepository.getExerciseInfo(id: 220) { [weak self] result in
+        exerciseRepository.getExerciseInfo(id: exerciseId) { [weak self] result in
             switch result {
             case .success(let exercisesInfo):
                 self?.exerciseInfo = exercisesInfo
@@ -40,7 +42,8 @@ class ExerciseDetailViewModelImpl: ExerciseDetailViewModel {
         }
     }
     
-    init(coordinator: AppCoordinator) {
+    init(id: Int, coordinator: AppCoordinator) {
+        self.exerciseId = id
         self.coordinator = coordinator
     }
 }

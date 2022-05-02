@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol ExercideListViewModel {
-    var exerciseListPublisher: Published<[ExerciseCellViewModel]>.Publisher  { get }
+    var exerciseListPublisher: Published<[Exercise]>.Publisher  { get }
     func didSelectCell(index: Int)
     func viewDidLoad()
 }
@@ -19,11 +19,11 @@ class ExercideListViewModelImpl: ExercideListViewModel {
     let exerciseRepository: ExerciseRepository = ExerciseRepositoryImpl()
     weak var coordinator: AppCoordinator!
 
-    @Published var exerciseList: [ExerciseCellViewModel] = []
-    var exerciseListPublisher: Published<[ExerciseCellViewModel]>.Publisher  { $exerciseList }
+    @Published var exerciseList: [Exercise] = []
+    var exerciseListPublisher: Published<[Exercise]>.Publisher  { $exerciseList }
     
     func didSelectCell(index: Int) {
-        
+        coordinator.navigateToExerciseDetail(id: exerciseList[index].id)
     }
     
     func viewDidLoad() {

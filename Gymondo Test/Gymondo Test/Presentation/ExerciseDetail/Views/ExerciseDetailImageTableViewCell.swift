@@ -6,18 +6,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ExerciseDetailImageTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var exerciseImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configureWith(stringUrl: String) {
+        exerciseImageView.kf.setImage(with: URL(string: stringUrl))
     }
     
 }

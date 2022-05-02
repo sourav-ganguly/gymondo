@@ -33,6 +33,9 @@
 		E52A87B6281FB2BD00794C44 /* ExerciseDetailTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E52A87B4281FB2BD00794C44 /* ExerciseDetailTitleTableViewCell.xib */; };
 		E52A87BB281FB32000794C44 /* ExerciseDetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A87B9281FB32000794C44 /* ExerciseDetailImageTableViewCell.swift */; };
 		E52A87BC281FB32000794C44 /* ExerciseDetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E52A87BA281FB32000794C44 /* ExerciseDetailImageTableViewCell.xib */; };
+		E52A87BF281FDE3900794C44 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E52A87BE281FDE3900794C44 /* Kingfisher */; };
+		E52A87C2281FE73C00794C44 /* ExerciseDetailVeriationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52A87C0281FE73C00794C44 /* ExerciseDetailVeriationTableViewCell.swift */; };
+		E52A87C3281FE73C00794C44 /* ExerciseDetailVeriationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E52A87C1281FE73C00794C44 /* ExerciseDetailVeriationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,8 @@
 		E52A87B4281FB2BD00794C44 /* ExerciseDetailTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseDetailTitleTableViewCell.xib; sourceTree = "<group>"; };
 		E52A87B9281FB32000794C44 /* ExerciseDetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailImageTableViewCell.swift; sourceTree = "<group>"; };
 		E52A87BA281FB32000794C44 /* ExerciseDetailImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseDetailImageTableViewCell.xib; sourceTree = "<group>"; };
+		E52A87C0281FE73C00794C44 /* ExerciseDetailVeriationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailVeriationTableViewCell.swift; sourceTree = "<group>"; };
+		E52A87C1281FE73C00794C44 /* ExerciseDetailVeriationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseDetailVeriationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52A87BF281FDE3900794C44 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +228,8 @@
 				E52A87B4281FB2BD00794C44 /* ExerciseDetailTitleTableViewCell.xib */,
 				E52A87B9281FB32000794C44 /* ExerciseDetailImageTableViewCell.swift */,
 				E52A87BA281FB32000794C44 /* ExerciseDetailImageTableViewCell.xib */,
+				E52A87C0281FE73C00794C44 /* ExerciseDetailVeriationTableViewCell.swift */,
+				E52A87C1281FE73C00794C44 /* ExerciseDetailVeriationTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +250,9 @@
 			dependencies = (
 			);
 			name = "Gymondo Test";
+			packageProductDependencies = (
+				E52A87BE281FDE3900794C44 /* Kingfisher */,
+			);
 			productName = "Gymondo Test";
 			productReference = E52A8754281D627800794C44 /* Gymondo Test.app */;
 			productType = "com.apple.product-type.application";
@@ -314,6 +325,9 @@
 				Base,
 			);
 			mainGroup = E52A874B281D627800794C44;
+			packageReferences = (
+				E52A87BD281FDE3900794C44 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = E52A8755281D627800794C44 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -334,6 +348,7 @@
 				E52A8764281D627900794C44 /* LaunchScreen.storyboard in Resources */,
 				E52A8761281D627900794C44 /* Assets.xcassets in Resources */,
 				E52A879F281E681900794C44 /* ExerciseTableViewCell.xib in Resources */,
+				E52A87C3281FE73C00794C44 /* ExerciseDetailVeriationTableViewCell.xib in Resources */,
 				E52A87B6281FB2BD00794C44 /* ExerciseDetailTitleTableViewCell.xib in Resources */,
 				E52A875F281D627800794C44 /* Main.storyboard in Resources */,
 				E52A87BC281FB32000794C44 /* ExerciseDetailImageTableViewCell.xib in Resources */,
@@ -366,6 +381,7 @@
 				E52A87B5281FB2BD00794C44 /* ExerciseDetailTitleTableViewCell.swift in Sources */,
 				E52A875C281D627800794C44 /* ViewController.swift in Sources */,
 				E52A8758281D627800794C44 /* AppDelegate.swift in Sources */,
+				E52A87C2281FE73C00794C44 /* ExerciseDetailVeriationTableViewCell.swift in Sources */,
 				E52A87A9281FA3BE00794C44 /* ExerciseDetailViewModel.swift in Sources */,
 				E52A87BB281FB32000794C44 /* ExerciseDetailImageTableViewCell.swift in Sources */,
 				E52A87A5281FA30F00794C44 /* ExerciseDetailViewController.swift in Sources */,
@@ -738,6 +754,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E52A87BD281FDE3900794C44 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E52A87BE281FDE3900794C44 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E52A87BD281FDE3900794C44 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E52A874C281D627800794C44 /* Project object */;
 }

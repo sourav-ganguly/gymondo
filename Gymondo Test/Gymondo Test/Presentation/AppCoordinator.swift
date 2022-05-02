@@ -40,6 +40,15 @@ extension AppCoordinator: Coordinator {
         vc.viewModel = ExercideListViewModelImpl(coordinator: self)
         navigationController.setViewControllers([vc], animated: false)
     }
+    
+    func navigateToExerciseDetail(id: Int) {
+        let storyboard = UIStoryboard(name: .exerciseDetailViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: .exerciseDetailViewController) as? ExerciseDetailViewController else {
+            preconditionFailure("Unable to instantiate a ExerciseDetailViewController with the name")
+        }
+        vc.viewModel = ExerciseDetailViewModelImpl(id: id, coordinator: self)
+        navigationController.pushViewController(vc, animated: true)
+    }
 }
 
 
@@ -48,6 +57,7 @@ public protocol Coordinator {
     func start()
 }
 
-private extension String {
+fileprivate extension String {
     static let exerciseListViewController = "ExerciseListViewController"
+    static let exerciseDetailViewController = "ExerciseDetailViewController"
 }

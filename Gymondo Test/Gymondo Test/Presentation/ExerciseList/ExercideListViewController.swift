@@ -17,7 +17,7 @@ class ExerciseListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = .title
+        title = .viewControllerTitle
         configureTableView()
         viewModel.viewDidLoad()
 
@@ -54,10 +54,11 @@ extension ExerciseListViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectCell(index: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
-private extension String {
+fileprivate extension String {
     static let exerciseCellName = "ExerciseTableViewCell"
-    static let title = "Exercise List"
+    static let viewControllerTitle = "Exercise List"
 }
