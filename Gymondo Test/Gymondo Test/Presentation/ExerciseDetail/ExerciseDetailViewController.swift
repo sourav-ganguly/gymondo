@@ -26,7 +26,6 @@ class ExerciseDetailViewController: UIViewController {
         viewModel.exerciseInfoPublisher
             .receive(on: RunLoop.main)
             .sink { [weak self] exerciseInfo in
-//                self?.exerciseViewModelList = viewModelList
                 self?.exerciseTitle = exerciseInfo?.name ?? ""
                 self?.imageUrls = (exerciseInfo?.images.map { $0.image }) ?? []
                 self?.nVariations = exerciseInfo?.variations.count ?? 0

@@ -14,7 +14,6 @@ class ExerciseTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         backgroundImageView.layer.cornerRadius = 8.0
     }
     

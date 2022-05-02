@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol AppCoordinatorOutput: AnyObject {
+    func navigateToExerciseDetail(id: Int)
+}
+
 final class AppCoordinator: NSObject {
 
     // MARK: - Properties
@@ -17,7 +21,6 @@ final class AppCoordinator: NSObject {
     let launchOptions: [UIApplication.LaunchOptionsKey: Any]?
 
     let navigationController = UINavigationController()
-//    var mainCoordinator: Coordinator
 
 
     // MARK: - Startup
@@ -28,7 +31,7 @@ final class AppCoordinator: NSObject {
     }
 }
 
-extension AppCoordinator: Coordinator {
+extension AppCoordinator: Coordinator, AppCoordinatorOutput {
     func start() {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

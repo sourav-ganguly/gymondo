@@ -19,7 +19,7 @@ protocol ExerciseDetailViewModel {
 class ExerciseDetailViewModelImpl: ExerciseDetailViewModel {
     
     let exerciseRepository: ExerciseRepository = ExerciseRepositoryImpl()
-    weak var coordinator: AppCoordinator!
+    weak var coordinator: AppCoordinatorOutput!
     let exerciseId: Int
 
     @Published var exerciseInfo: ExerciseInfo? = nil

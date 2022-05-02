@@ -17,7 +17,7 @@ protocol ExercideListViewModel {
 
 class ExercideListViewModelImpl: ExercideListViewModel {
     let exerciseRepository: ExerciseRepository = ExerciseRepositoryImpl()
-    weak var coordinator: AppCoordinator!
+    weak var coordinator: AppCoordinatorOutput!
 
     @Published var exerciseList: [Exercise] = []
     var exerciseListPublisher: Published<[Exercise]>.Publisher  { $exerciseList }

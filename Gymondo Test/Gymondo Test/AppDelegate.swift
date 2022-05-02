@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var appCoordinator: AppCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.overrideUserInterfaceStyle = .light
         appCoordinator = AppCoordinator(window: window!, application: application, launchOptions: launchOptions)
