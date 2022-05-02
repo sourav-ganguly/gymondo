@@ -24,6 +24,7 @@ Due to business from my end it would have been very hard to implement all the fe
 - Unit test
 - Lazy loading
 - No Error handling and Loading view
+- Only UIKit because I am not yet proficient in SwiftUI
 
 ## Issue
 - There is one Constraint Mismatch issue in ExerciseDetailVeriationTableViewCell. I checked and all the constraints seems alright. The issue can be fixed if I delete the height of the imageview. But I wanted to the image view to have a fixed height.
